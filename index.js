@@ -20,6 +20,7 @@ var EasyXml = function(config) {
         attributePrefix: '_',
         rootElement: 'response',
         rootArray: 'items',
+	    rootArrayRootElement: '', //to override the root element when the root is an array
         dateFormat: 'ISO', // ISO = ISO8601, SQL = MySQL Timestamp, JS = (new Date).toString()
         manifest: false,
         unwrappedArrays: false,
@@ -104,7 +105,13 @@ EasyXml.prototype.render = function(object, rootElementOverride) {
         root = this.config.rootElement;
     }
 
-    var xml = element(root);
+    //to allow top level arrays wrapped within a different root element
+    if(this.config.rootArrayRootElement == ""){
+	var xml = element(root);
+    }
+    else{
+	var xml = element(this.config.rootArrayRootElement);
+    }
 
     this.parseChildElement(xml, object);
 
