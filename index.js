@@ -18,6 +18,7 @@ var EasyXml = function(config) {
         singularizeChildren: true,
         allowAttributes: true,
         attributePrefix: '_',
+        elementPrefix: '',
         rootElement: 'response',
         rootArray: 'items',
         dateFormat: 'ISO', // ISO = ISO8601, SQL = MySQL Timestamp, JS = (new Date).toString()
@@ -147,6 +148,17 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
 
             var child = parentObjectNode[key];
             var el = null;
+
+            if (this.config.elementPrefix){
+                // if key starts with elementPrefix remove the prefix (handle it as an element), if only one symbol, treat it as an empty attribute
+                if (key[0] === this.config.elementPrefix) {
+                    key =  key.length > 1 ? key.substring(1) : this.config.attributePrefix;
+
+                // otherwise handle it as an attribute
+                } else if (typeof child !== 'object' || child instanceof Date) {
+                    key = this.config.attributePrefix + key;
+                }
+            }
 
             if (this.filterNull(child)) {
                 // no element if we are skipping nulls and undefined

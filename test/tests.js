@@ -17,14 +17,16 @@ describe("Node EasyXML", function () {
     wrappedArrays: "should normally wrap array elements in a single parent element",
     'null': "should parse a null value",
     rootArray1: "should work as expected when root is an array of objects",
-    rootArray2: "should work as expected when root is an array of strings"
+    rootArray2: "should work as expected when root is an array of strings",
+    elementPrefix: "should parse a JSON object using elementPrefix option"
   };
 
   Object.keys(should).forEach(function(name) {
-      it(should[name], function(done) {
+      it.only(should[name], function(done) {
         var config = {
           singularizeChildren: name !== 'singularizeChildren' && name !== 'singularizeChildren2',
-          unwrappedArrays: name === 'unwrappedArrays'
+          unwrappedArrays: name === 'unwrappedArrays',
+          elementPrefix: name === 'elementPrefix' && '@'
         };
 
         var easyXML = new EasyXml(config);
