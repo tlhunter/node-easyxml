@@ -7,6 +7,10 @@ var ElementTree = et.ElementTree;
 var element = et.Element;
 var subElement = et.SubElement;
 
+var decamelize = function (str, sep) {
+    return str.replace(/([a-z\d])([A-Z])/g, '$1' + (sep || '-') + '$2').toLowerCase();
+};
+
 /**
  * Instantiate a new EasyXml instance
  *
@@ -24,7 +28,10 @@ var EasyXml = function(config) {
         manifest: false,
         unwrappedArrays: false,
         indent: 4,
-        filterNulls: false
+        filterNulls: false,
+        decamelize: false,
+        decamelizeAttributes: false,
+        decamelizeElements: false
     }, config);
 };
 
@@ -151,6 +158,11 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
             if (this.filterNull(child)) {
                 // no element if we are skipping nulls and undefined
                 continue;
+            }
+
+            if (this.config.decamelize || this.config.decamelizeAttributes || this.config.decamelizeElements){
+                var separator = (this.isAttribute(key) ? this.config.decamelizeAttributes : this.config.decamelizeElements) || this.config.decamelize;
+                key = decamelize(key, typeof separator == 'string' ? separator : '-')
             }
 
             if (!isNaN(key)) {

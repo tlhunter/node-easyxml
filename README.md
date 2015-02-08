@@ -77,6 +77,9 @@ This should output the following XML document:
 * `manifest`: Whether or not to add that XML manifest line to the top
 * `unwrappedArrays`: TODO: Document
 * `filterNulls`: Should nulls and undefines be removed from the rendered XML
+* `decamelize`: Should camel case names of elements and attributes be converted for example `someAttr` -> `some-attr`, separator is `-` by default or not empty value of `decamelize`, default: `false`
+* `decamelizeAttributes`: The same as `decamelize` but only for attributes , default: `false`
+* `decamelizeElements`: The same as `decamelize` but only for elements, default: `false`
 
 ## License
 
