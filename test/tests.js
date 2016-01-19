@@ -12,6 +12,7 @@ describe("Node EasyXML", function () {
     singularizeChildren: "should parse a JSON object without singularizeChildren to XML",
     singularizeChildren2: "should parse a JSON object without singularizeChildren to XML (with object)",
     singularizeChildren3: "should parse a JSON object with correct captalization",
+    singularizeChildrenMultipleProperties: "should parse a JSON object and correctly nest child nodes",
     complex: "testing a more complex XML object",
     unwrappedArrays: "should be able to use unwrapped child nodes to represent an array",
     wrappedArrays: "should normally wrap array elements in a single parent element",
@@ -23,7 +24,7 @@ describe("Node EasyXML", function () {
   Object.keys(should).forEach(function(name) {
       it(should[name], function(done) {
         var config = {
-          singularizeChildren: name !== 'singularizeChildren' && name !== 'singularizeChildren2',
+          singularizeChildren: name !== 'singularizeChildren' && name !== 'singularizeChildren2' && name !== 'singularizeChildrenMultipleProperties',
           unwrappedArrays: name === 'unwrappedArrays'
         };
 
