@@ -7,7 +7,7 @@ var EasyXml = require('../index.js');
 describe("Array Unwrapping", function () {
   it("should be able to use unwrapped child nodes to represent an array", function() {
     var easyXML = new EasyXml({
-      unwrappedArrays: true,
+      unwrapArrays: true,
       indent: 4
     });
 
@@ -47,14 +47,14 @@ describe("Array Unwrapping", function () {
 
     var after = easyXML.render(before);
 
-    var expected = fs.readFileSync('./test/fixtures/unwrappedArrays.xml', 'utf8');
+    var expected = fs.readFileSync('./test/fixtures/unwrapArrays.xml', 'utf8');
 
     assert.strictEqual(after, expected);
   });
 
   it("should normally wrap array elements in a single parent element", function() {
     var easyXML = new EasyXml({
-      unwrappedArrays: false,
+      unwrapArrays: false,
       indent: 4
     });
 

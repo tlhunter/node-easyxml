@@ -75,7 +75,7 @@ This should output the following XML document:
 | rootArray                 | If the root element is an array, this wraps the XML document      | 'items'   |
 | rootElement               | A string to wrap around the rendered XML document                 | 'response'|
 | singularize               | If an array is plural, its children elements will be singular     | true      |
-| unwrappedArrays           | If true will keep array children at parents level                 | false     |
+| unwrapArrays              | If true will keep array children at parents level                 | false     |
 
 ## License
 

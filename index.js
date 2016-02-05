@@ -23,7 +23,7 @@ var EasyXml = function(config) {
     rootArray: 'items',
     rootElement: 'response',
     singularize: true,
-    unwrappedArrays: false
+    unwrapArrays: false
   }, config);
 };
 
@@ -218,8 +218,8 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
               continue;
             }
 
-            // if unwrapped arrays, make new subelements on the parent.
-            var el2 = this.config.unwrappedArrays ? (el || subElement(parentXmlNode, key)) : (subElement(el, subElementName));
+            // If unwrap arrays, make new subelements on the parent
+            var el2 = this.config.unwrapArrays ? (el || subElement(parentXmlNode, key)) : (subElement(el, subElementName));
 
             // Check type of child element
             if (Object.prototype.hasOwnProperty.call(child, key2) && EasyXml.isChildKeyParsed(child[key2])) {
@@ -229,8 +229,8 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
               el2.text = child[key2].toString();
             }
 
-            // if unwrapped arrays, the initial child element has been consumed:
-            if (this.config.unwrappedArrays) el = undefined;
+            // If unwrap arrays, the initial child element has been consumed
+            if (this.config.unwrapArrays) el = undefined;
           }
         }
       } else if (typeof child === 'object') {

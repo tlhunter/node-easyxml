@@ -23,7 +23,7 @@ describe("Undefined Values", function () {
     };
 
     var easyXML = new EasyXml({
-      unwrappedArrays: false,
+      unwrapArrays: false,
       indent: 4
     });
 
@@ -52,7 +52,7 @@ describe("Undefined Values", function () {
     };
 
     var easyXML = new EasyXml({
-      unwrappedArrays: false,
+      unwrapArrays: false,
       filterNulls: true,
       indent: 4
     });

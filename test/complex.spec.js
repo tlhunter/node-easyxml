@@ -44,7 +44,7 @@ describe("Complex Operations", function () {
 
     var easyXML = new EasyXml({
       manifest: true,
-      unwrappedArrays: true,
+      unwrapArrays: true,
       rootElement: 'widget'
     });
 
