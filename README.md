@@ -80,4 +80,4 @@ This should output the following XML document:
 
 ## License
 
-This project is licensed under a Dual BSD/GPL license.
+This project is dually licensed under the BSD-3-Clause / GPL-2.0 licenses.
