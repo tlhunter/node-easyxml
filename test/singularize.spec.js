@@ -20,7 +20,7 @@ describe("Singularize", function () {
 
     var after = easyXML.render(before);
 
-    var expected = fs.readFileSync('./test/fixtures/singularizeChildren.xml', 'utf8');
+    var expected = fs.readFileSync('./test/fixtures/singularize.xml', 'utf8');
 
     assert.strictEqual(after, expected);
   });
@@ -40,7 +40,7 @@ describe("Singularize", function () {
 
     var after = easyXML.render(before);
 
-    var expected = fs.readFileSync('./test/fixtures/singularizeChildren2.xml', 'utf8');
+    var expected = fs.readFileSync('./test/fixtures/singularize2.xml', 'utf8');
 
     assert.strictEqual(after, expected);
   });
@@ -60,7 +60,7 @@ describe("Singularize", function () {
 
     var after = easyXML.render(before);
 
-    var expected = fs.readFileSync('./test/fixtures/singularizeChildren3.xml', 'utf8');
+    var expected = fs.readFileSync('./test/fixtures/singularize3.xml', 'utf8');
 
     assert.strictEqual(after, expected);
   });
@@ -90,7 +90,7 @@ describe("Singularize", function () {
 
     var after = easyXML.render(before);
 
-    var expected = fs.readFileSync('./test/fixtures/singularizeChildrenMultipleProperties.xml', 'utf8');
+    var expected = fs.readFileSync('./test/fixtures/singularizeMultipleProperties.xml', 'utf8');
 
     assert.strictEqual(after, expected);
   });
