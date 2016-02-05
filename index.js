@@ -28,6 +28,10 @@ var EasyXml = function(config) {
   }, config);
 };
 
+EasyXml.ISO = 'ISO';
+EasyXml.JS = 'JS';
+EasyXml.SQL = 'SQL';
+
 /**
  * Merges two objects and returns the result
  *
@@ -186,10 +190,10 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
         }
       } else if (child instanceof Date) {
         // Date
-        if (this.config.dateFormat === 'ISO') {
+        if (this.config.dateFormat === EasyXml.ISO) {
           // ISO: YYYY-MM-DDTHH:MM:SS.mmmZ
           el.text = child.toISOString();
-        } else if (this.config.dateFormat === 'SQL') {
+        } else if (this.config.dateFormat === EasyXml.SQL) {
           // SQL: YYYY-MM-DD HH:MM:SS
           var yyyy    = child.getFullYear();
           var mm      = EasyXml.zeroPadTen(child.getMonth() + 1);
@@ -199,7 +203,7 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
           var ss      = EasyXml.zeroPadTen(child.getSeconds());
 
           el.text = [yyyy, '-', mm, '-', dd, ' ', hh, ':', min, ':', ss].join("");
-        } else if (this.config.dateFormat === 'JS') {
+        } else if (this.config.dateFormat === EasyXml.JS) {
           // JavaScript date format
           el.text = child.toString();
         } else {

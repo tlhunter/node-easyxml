@@ -24,7 +24,7 @@ describe("Date Operations", function () {
     };
 
     var easyXML = new EasyXml({
-      dateFormat: 'SQL',
+      dateFormat: EasyXml.SQL,
       indent: 0
     });
 
@@ -39,7 +39,7 @@ describe("Date Operations", function () {
     };
 
     var easyXML = new EasyXml({
-      dateFormat: 'JS',
+      dateFormat: EasyXml.JS,
       indent: 0
     });
 
