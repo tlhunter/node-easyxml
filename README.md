@@ -80,10 +80,10 @@ This should output the following XML document:
 
 ## Migration Guide from 1.x to 2.x
 
-* XML documents now default to 2 spaces instead of 4
 * `singularizeChildren` has been renamed `singularize`
 * `allowAttributes` has been removed since it was redundant
 * `unwrappedArrays` has been renamed `unwrapArrays`
+* **Behavior**: XML documents now default to 2 spaces instead of 4
 * **Behavior**: Objects with `.toJSON()` methods now have that method executed
 * **Behavior**: When using singularize with a pluralized array of objects they now no longer accidentally nest
 
