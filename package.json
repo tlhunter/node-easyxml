@@ -27,7 +27,8 @@
     "inflect": "^0.3.0"
   },
   "devDependencies": {
-    "mocha": "^2.0.1"
+    "mocha": "^2.0.1",
+    "moment": "^2.11.2"
   },
   "license": "(BSD-3-Clause OR GPL-2.0)",
   "engines": {
