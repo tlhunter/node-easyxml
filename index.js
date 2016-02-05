@@ -40,13 +40,13 @@ EasyXml.merge = function(obj1, obj2) {
     var obj3 = {};
 
     for (var attr1 in obj1) {
-        if (obj1.hasOwnProperty(attr1)) {
+        if (Object.prototype.hasOwnProperty.call(obj1, attr1)) {
             obj3[attr1] = obj1[attr1];
         }
     }
 
     for (var attr2 in obj2) {
-        if (obj2.hasOwnProperty(attr2)) {
+        if (Object.prototype.hasOwnProperty.call(obj2, attr2)) {
             obj3[attr2] = obj2[attr2];
         }
     }
@@ -143,7 +143,7 @@ EasyXml.prototype.isAttribute = function(key) {
  */
 EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) {
     for (var key in parentObjectNode) {
-        if (parentObjectNode.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(parentObjectNode, key)) {
 
             var child = parentObjectNode[key];
             var el = null;
@@ -166,7 +166,7 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
                 el.text = "";
             } else if (!this.config.singularizeChildren && typeof parentXmlNode === 'object' && typeof child === 'object') {
                 for (var subkey in child) {
-                    if (child.hasOwnProperty(subkey)) {
+                    if (Object.prototype.hasOwnProperty.call(child, subkey)) {
                         if (EasyXml.isChildKeyParsed(child[subkey])) {
                             this.parseChildElement(el, child[subkey]);
                         } else {
@@ -182,6 +182,8 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
                     } else {
                         parentXmlNode.set(key.substring(1), child);
                     }
+                } else if (typeof child === 'object' && typeof child.toString === 'function') {
+                    parentXmlNode.set(key.substring(1), child.toString());
                 } else {
                     throw new Error(key + "contained non_string_attribute");
                 }
@@ -211,7 +213,7 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
                 var subElementName = inflect.singularize(key);
 
                 for (var key2 in child) {
-                    if (child.hasOwnProperty(key2)) {
+                    if (Object.prototype.hasOwnProperty.call(child, key2)) { 
                         if (this.filterNull(child[key2])) {
                             continue;
                         }
@@ -220,7 +222,7 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
                         var el2 = (this.config.unwrappedArrays === true) ? ((el) || subElement(parentXmlNode, key)) : (subElement(el, subElementName));
 
                         // Check type of child element
-                        if (child.hasOwnProperty(key2) && EasyXml.isChildKeyParsed(child[key2])) {
+                        if (Object.prototype.hasOwnProperty.call(child, key2) && EasyXml.isChildKeyParsed(child[key2])) {
                             this.parseChildElement(el2, child[key2]);
                         } else {
                             // Just add element directly without parsing
