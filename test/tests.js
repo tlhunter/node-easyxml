@@ -187,4 +187,24 @@ describe("Node EasyXML", function () {
             easyXML.render(before);
         }, /unknown_date_format/);
     });
+
+    it("should allow renaming the root element when root is an array", function() {
+      var before = [
+        {
+          name: "spot"
+        },
+        {
+          name: "rover"
+        }
+      ];
+
+      var easyXML = new EasyXml({
+        rootArray: 'dogs',
+        indent: 0
+      });
+
+      var after = easyXML.render(before, 'Kennel');
+
+      assert.equal(after, "<Kennel>\n<dog>\n<name>spot</name>\n</dog>\n<dog>\n<name>rover</name>\n</dog>\n</Kennel>\n");
+    });
 });
