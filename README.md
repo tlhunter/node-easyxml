@@ -80,7 +80,7 @@ This should output the following XML document:
 
 ## Migration Guide from 1.x to 2.x
 
-* XML documents now default to 2 spaces inatead of 4
+* XML documents now default to 2 spaces instead of 4
 * `singularizeChildren` has been renamed `singularize`
 * `allowAttributes` has been removed since it was redundant
 * `unwrappedArrays` has been renamed `unwrapArrays`
