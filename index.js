@@ -15,7 +15,6 @@ var subElement = et.SubElement;
  */
 var EasyXml = function(config) {
   this.config = EasyXml.merge({
-    allowAttributes: true,
     attributePrefix: '_',
     dateFormat: 'ISO', // ISO = ISO8601, SQL = MySQL Timestamp, JS = (new Date).toString()
     filterNulls: false,
@@ -135,7 +134,7 @@ EasyXml.prototype.filterNull = function(child) {
  * @returns {Boolean}
  */
 EasyXml.prototype.isAttribute = function(key) {
-  return this.config.allowAttributes && key[0] === this.config.attributePrefix;
+  return this.config.attributePrefix && key[0] === this.config.attributePrefix;
 };
 
 /**

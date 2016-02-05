@@ -15,7 +15,6 @@ var EasyXml = require('easyxml');
 
 var serializer = new EasyXml({
     singularize: true,
-    allowAttributes: true,
     rootElement: 'response',
     dateFormat: 'ISO',
     manifest: true
@@ -66,18 +65,17 @@ This should output the following XML document:
 
 ## Configuration
 
-| Config Setting            | Purpose                                                       | Default   |
-|---------------------------|---------------------------------------------------------------|-----------|
-| allowAttributes           | String attributes starting with _ will be XML attributes      | true      |
-| attributePrefix           | Prefix to look for when creating attributes                   | '\_'      |
-| dateFormat                | A date format for JS dates, currently accepts ISO, SQL, JS    | 'ISO'     |
-| filterNulls               | Should nulls and undefines be removed from the rendered XML   | false     |
-| indent                    | The number of spaces to indent child elements with            | 2         |
-| manifest                  | Whether or not to add that XML manifest line to the top       | false     |
-| rootArray                 | If the root element is an array, this wraps the XML document  | 'items'   |
-| rootElement               | A string to wrap around the rendered XML document             | 'response'|
-| singularize               | If an array is plural, its children elements will be singular | true      |
-| unwrappedArrays           | If true will keep array children at parents level             | false     |
+| Config Setting            | Purpose                                                           | Default   |
+|---------------------------|-------------------------------------------------------------------|-----------|
+| attributePrefix           | JSON with this prefix will be XML attributes instead of elements  | '\_'      |
+| dateFormat                | A date format for JS dates, currently accepts ISO, SQL, JS        | 'ISO'     |
+| filterNulls               | Should nulls and undefines be removed from the rendered XML       | false     |
+| indent                    | The number of spaces to indent child elements with                | 2         |
+| manifest                  | Whether or not to add that XML manifest line to the top           | false     |
+| rootArray                 | If the root element is an array, this wraps the XML document      | 'items'   |
+| rootElement               | A string to wrap around the rendered XML document                 | 'response'|
+| singularize               | If an array is plural, its children elements will be singular     | true      |
+| unwrappedArrays           | If true will keep array children at parents level                 | false     |
 
 ## License
 
