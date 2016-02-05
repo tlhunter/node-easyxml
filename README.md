@@ -77,6 +77,17 @@ This should output the following XML document:
 | singularize               | If an array is plural, its children elements will be singular     | true      |
 | unwrapArrays              | If true will keep array children at parents level                 | false     |
 
+
+## Migration Guide from 1.x to 2.x
+
+* XML documents now default to 2 spaces inatead of 4
+* `singularizeChildren` has been renamed `singularize`
+* `allowAttributes` has been removed since it was redundant
+* `unwrappedArrays` has been renamed `unwrapArrays`
+* **Behavior**: Objects with `.toJSON()` methods now have that method executed
+* **Behavior**: When using singularize with a pluralized array of objects they now no longer accidentally nest
+
+
 ## License
 
 This project is dually licensed under the BSD-3-Clause / GPL-2.0 licenses.
