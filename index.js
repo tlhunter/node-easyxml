@@ -170,8 +170,7 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
                         if (EasyXml.isChildKeyParsed(child[subkey])) {
                             this.parseChildElement(el, child[subkey]);
                         } else {
-                            el = subElement(el, subkey);
-                            el.text = child[subkey].toString();
+                            subElement(el, subkey).text = child[subkey].toString();
                         }
                     }
                 }
