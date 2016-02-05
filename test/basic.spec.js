@@ -42,7 +42,8 @@ describe("Basic Operations", function () {
     };
 
     var easyXML = new EasyXml({
-      singularizeChildren: true
+      singularizeChildren: true,
+      indent: 4
     });
 
     var after = easyXML.render(before);
@@ -61,7 +62,8 @@ describe("Basic Operations", function () {
     };
 
     var easyXML = new EasyXml({
-      singularizeChildren: true
+      singularizeChildren: true,
+      indent: 4
     });
 
     var after = easyXML.render(before);
@@ -80,7 +82,8 @@ describe("Basic Operations", function () {
     };
 
     var easyXML = new EasyXml({
-      singularizeChildren: true
+      singularizeChildren: true,
+      indent: 4
     });
 
     var after = easyXML.render(before);
@@ -100,7 +103,8 @@ describe("Basic Operations", function () {
     };
 
     var easyXML = new EasyXml({
-      singularizeChildren: true
+      singularizeChildren: true,
+      indent: 4
     });
 
     var after = easyXML.render(before);

@@ -7,7 +7,8 @@ var EasyXml = require('../index.js');
 describe("Singularize Children", function () {
   it("should parse a JSON object without singularizeChildren to XML", function() {
     var easyXML = new EasyXml({
-      singularizeChildren: false
+      singularizeChildren: false,
+      indent: 4
     });
 
     var before = {
@@ -26,7 +27,8 @@ describe("Singularize Children", function () {
 
   it("should parse a JSON object without singularizeChildren to XML (with object)", function() {
     var easyXML = new EasyXml({
-      singularizeChildren: false
+      singularizeChildren: false,
+      indent: 4
     });
 
     var before = {
@@ -45,7 +47,8 @@ describe("Singularize Children", function () {
 
   it("should parse a JSON object with correct captalization", function() {
     var easyXML = new EasyXml({
-      singularizeChildren: true
+      singularizeChildren: true,
+      indent: 4
     });
 
     var before = {
@@ -64,7 +67,8 @@ describe("Singularize Children", function () {
 
   it("should parse a JSON object and correctly nest child nodes", function() {
     var easyXML = new EasyXml({
-      singularizeChildren: false
+      singularizeChildren: false,
+      indent: 4
     });
 
     var before = {

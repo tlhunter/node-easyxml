@@ -19,7 +19,7 @@ var EasyXml = function(config) {
     attributePrefix: '_',
     dateFormat: 'ISO', // ISO = ISO8601, SQL = MySQL Timestamp, JS = (new Date).toString()
     filterNulls: false,
-    indent: 4,
+    indent: 2,
     manifest: false,
     rootArray: 'items',
     rootElement: 'response',

@@ -18,7 +18,6 @@ var serializer = new EasyXml({
     allowAttributes: true,
     rootElement: 'response',
     dateFormat: 'ISO',
-    indent: 2,
     manifest: true
 });
 
@@ -73,7 +72,7 @@ This should output the following XML document:
 | attributePrefix           | Prefix to look for when creating attributes                   | '\_'      |
 | dateFormat                | A date format for JS dates, currently accepts ISO, SQL, JS    | 'ISO'     |
 | filterNulls               | Should nulls and undefines be removed from the rendered XML   | false     |
-| indent                    | The number of spaces to indent child elements with            | 4         |
+| indent                    | The number of spaces to indent child elements with            | 2         |
 | manifest                  | Whether or not to add that XML manifest line to the top       | false     |
 | rootArray                 | If the root element is an array, this wraps the XML document  | 'items'   |
 | rootElement               | A string to wrap around the rendered XML document             | 'response'|

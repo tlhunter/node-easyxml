@@ -24,7 +24,8 @@ describe("Undefined Values", function () {
 
     var easyXML = new EasyXml({
       singularizeChildren: true,
-      unwrappedArrays: false
+      unwrappedArrays: false,
+      indent: 4
     });
 
     var after = easyXML.render(before);
@@ -54,7 +55,8 @@ describe("Undefined Values", function () {
     var easyXML = new EasyXml({
       singularizeChildren: true,
       unwrappedArrays: false,
-      filterNulls: true
+      filterNulls: true,
+      indent: 4
     });
 
     var after = easyXML.render(before);

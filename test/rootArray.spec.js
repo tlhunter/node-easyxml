@@ -7,7 +7,8 @@ var EasyXml = require('../index.js');
 describe("Root is Array", function () {
   it("should work as expected when root is an array of objects", function() {
     var easyXML = new EasyXml({
-      singularizeChildren: true
+      singularizeChildren: true,
+      indent: 4
     });
 
     var before = [
@@ -30,7 +31,8 @@ describe("Root is Array", function () {
 
   it("should work as expected when root is an array of strings", function() {
     var easyXML = new EasyXml({
-      singularizeChildren: true
+      singularizeChildren: true,
+      indent: 4
     });
 
     var before = ["one", "two", "three"];

@@ -4,12 +4,13 @@ var assert  = require('assert');
 var fs = require('fs');
 var EasyXml = require('../index.js');
 
-describe("Basic Operations", function () {
+describe("Complex Operations", function () {
   it("should handle a more complex object", function() {
     var before = require('./fixtures/complex.json');
 
     var easyXML = new EasyXml({
-      singularizeChildren: true
+      singularizeChildren: true,
+      indent: 4
     });
 
     var after = easyXML.render(before);
@@ -46,8 +47,7 @@ describe("Basic Operations", function () {
       manifest: true,
       singularizeChildren: true,
       unwrappedArrays: true,
-      rootElement: 'widget',
-      indent: 2
+      rootElement: 'widget'
     });
 
     var after = easyXML.render(before);

@@ -8,7 +8,8 @@ describe("Array Unwrapping", function () {
   it("should be able to use unwrapped child nodes to represent an array", function() {
     var easyXML = new EasyXml({
       singularizeChildren: true,
-      unwrappedArrays: true
+      unwrappedArrays: true,
+      indent: 4
     });
 
     var before = {
@@ -55,7 +56,8 @@ describe("Array Unwrapping", function () {
   it("should normally wrap array elements in a single parent element", function() {
     var easyXML = new EasyXml({
       singularizeChildren: true,
-      unwrappedArrays: false
+      unwrappedArrays: false,
+      indent: 4
     });
 
     var before = {

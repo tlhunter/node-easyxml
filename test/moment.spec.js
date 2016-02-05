@@ -14,6 +14,6 @@ describe("Moment.js", function () {
 
     var after = easyXML.render(before);
 
-    assert.equal(after, "<response>\n    <date>2016-02-07T05:03:00.000Z</date>\n</response>\n");
+    assert.equal(after, "<response>\n  <date>2016-02-07T05:03:00.000Z</date>\n</response>\n");
   });
 });
