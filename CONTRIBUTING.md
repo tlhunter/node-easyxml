@@ -8,6 +8,11 @@ If you're fixing a bug, then you must have a test which reproduces that bug.
 If you're adding a feature, you must include a test for this feature.
 
 
+## Code Coverage
+
+Pull Requests which decrease code coverage will not be accepted.
+
+
 ## Style
 
 All altered files must adhere to the eslint rules.
