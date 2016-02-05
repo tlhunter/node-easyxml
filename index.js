@@ -217,7 +217,7 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
                         }
 
                         // if unwrapped arrays, make new subelements on the parent.
-                        var el2 = (this.config.unwrappedArrays === true) ? ((el) || subElement(parentXmlNode, key)) : (subElement(el, subElementName));
+                        var el2 = this.config.unwrappedArrays ? (el || subElement(parentXmlNode, key)) : (subElement(el, subElementName));
 
                         // Check type of child element
                         if (Object.prototype.hasOwnProperty.call(child, key2) && EasyXml.isChildKeyParsed(child[key2])) {
@@ -228,7 +228,7 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
                         }
 
                         // if unwrapped arrays, the initial child element has been consumed:
-                        if (this.config.unwrappedArrays === true) el = undefined;
+                        if (this.config.unwrappedArrays) el = undefined;
                     }
                 }
             } else if (typeof child === 'object') {
