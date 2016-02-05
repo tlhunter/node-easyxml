@@ -69,16 +69,16 @@ This should output the following XML document:
 
 | Config Setting            | Purpose                                                       | Default   |
 |---------------------------|---------------------------------------------------------------|-----------|
-| singularizeChildren       | If an array is plural, its children elements will be singular | true      |
 | allowAttributes           | String attributes starting with _ will be XML attributes      | true      |
 | attributePrefix           | Prefix to look for when creating attributes                   | '\_'      |
-| rootElement               | A string to wrap around the rendered XML document             | 'response'|
-| rootArray                 | If the root element is an array, this wraps the XML document  | 'items'   |
 | dateFormat                | A date format for JS dates, currently accepts ISO, SQL, JS    | 'ISO'     |
+| filterNulls               | Should nulls and undefines be removed from the rendered XML   | false     |
 | indent                    | The number of spaces to indent child elements with            | 4         |
 | manifest                  | Whether or not to add that XML manifest line to the top       | false     |
+| rootArray                 | If the root element is an array, this wraps the XML document  | 'items'   |
+| rootElement               | A string to wrap around the rendered XML document             | 'response'|
+| singularizeChildren       | If an array is plural, its children elements will be singular | true      |
 | unwrappedArrays           | If true will keep array children at parents level             | false     |
-| filterNulls               | Should nulls and undefines be removed from the rendered XML   | false     |
 
 ## License
 

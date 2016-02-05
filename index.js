@@ -15,16 +15,16 @@ var subElement = et.SubElement;
  */
 var EasyXml = function(config) {
   this.config = EasyXml.merge({
-    singularizeChildren: true,
     allowAttributes: true,
     attributePrefix: '_',
-    rootElement: 'response',
-    rootArray: 'items',
     dateFormat: 'ISO', // ISO = ISO8601, SQL = MySQL Timestamp, JS = (new Date).toString()
-    manifest: false,
-    unwrappedArrays: false,
+    filterNulls: false,
     indent: 4,
-    filterNulls: false
+    manifest: false,
+    rootArray: 'items',
+    rootElement: 'response',
+    singularizeChildren: true,
+    unwrappedArrays: false
   }, config);
 };
 
