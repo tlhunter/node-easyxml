@@ -7,19 +7,19 @@ var moment = require('moment');
 
 describe("Node EasyXML", function () {
   var should = {
+    complex: "testing a more complex XML object",
     names: "should parse a JSON object into XML",
     names1: "should parse a JSON object with attrs into XML",
     names2: "should parse a JSON object with attrs and text node into XML",
+    'null': "should parse a null value",
+    rootArray1: "should work as expected when root is an array of objects",
+    rootArray2: "should work as expected when root is an array of strings",
     singularizeChildren: "should parse a JSON object without singularizeChildren to XML",
     singularizeChildren2: "should parse a JSON object without singularizeChildren to XML (with object)",
     singularizeChildren3: "should parse a JSON object with correct captalization",
     singularizeChildrenMultipleProperties: "should parse a JSON object and correctly nest child nodes",
-    complex: "testing a more complex XML object",
     unwrappedArrays: "should be able to use unwrapped child nodes to represent an array",
-    wrappedArrays: "should normally wrap array elements in a single parent element",
-    'null': "should parse a null value",
-    rootArray1: "should work as expected when root is an array of objects",
-    rootArray2: "should work as expected when root is an array of strings"
+    wrappedArrays: "should normally wrap array elements in a single parent element"
   };
 
   Object.keys(should).forEach(function(name) {
@@ -100,9 +100,6 @@ describe("Node EasyXML", function () {
       });
     });
 
-    /**
-     * TODO: If this fails for you, let me know, might be a timezone issue
-     */
     it("parses native Date objects", function() {
         var before = {
             date: new Date('December 17, 1995 03:24:00')
