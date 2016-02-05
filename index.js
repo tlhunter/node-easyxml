@@ -182,8 +182,6 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
                     } else {
                         parentXmlNode.set(key.substring(1), child);
                     }
-                } else if (typeof child === 'object' && typeof child.toString === 'function') {
-                    parentXmlNode.set(key.substring(1), child.toString());
                 } else {
                     throw new Error(key + "contained non_string_attribute");
                 }
