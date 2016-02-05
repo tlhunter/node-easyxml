@@ -23,7 +23,7 @@ var EasyXml = function(config) {
     manifest: false,
     rootArray: 'items',
     rootElement: 'response',
-    singularizeChildren: true,
+    singularize: true,
     unwrappedArrays: false
   }, config);
 };
@@ -168,7 +168,7 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
       if (child === null || child === undefined) {
         // allow for both null child and undefined child
         el.text = "";
-      } else if (!this.config.singularizeChildren && typeof parentXmlNode === 'object' && typeof child === 'object') {
+      } else if (!this.config.singularize && typeof parentXmlNode === 'object' && typeof child === 'object') {
         for (var subkey in child) {
           if (Object.prototype.hasOwnProperty.call(child, subkey)) {
             if (EasyXml.isChildKeyParsed(child[subkey])) {

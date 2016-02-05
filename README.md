@@ -14,7 +14,7 @@ $ npm install easyxml
 var EasyXml = require('easyxml');
 
 var serializer = new EasyXml({
-    singularizeChildren: true,
+    singularize: true,
     allowAttributes: true,
     rootElement: 'response',
     dateFormat: 'ISO',
@@ -76,7 +76,7 @@ This should output the following XML document:
 | manifest                  | Whether or not to add that XML manifest line to the top       | false     |
 | rootArray                 | If the root element is an array, this wraps the XML document  | 'items'   |
 | rootElement               | A string to wrap around the rendered XML document             | 'response'|
-| singularizeChildren       | If an array is plural, its children elements will be singular | true      |
+| singularize               | If an array is plural, its children elements will be singular | true      |
 | unwrappedArrays           | If true will keep array children at parents level             | false     |
 
 ## License

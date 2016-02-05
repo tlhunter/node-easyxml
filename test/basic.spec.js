@@ -42,7 +42,6 @@ describe("Basic Operations", function () {
     };
 
     var easyXML = new EasyXml({
-      singularizeChildren: true,
       indent: 4
     });
 
@@ -62,7 +61,6 @@ describe("Basic Operations", function () {
     };
 
     var easyXML = new EasyXml({
-      singularizeChildren: true,
       indent: 4
     });
 
@@ -82,7 +80,6 @@ describe("Basic Operations", function () {
     };
 
     var easyXML = new EasyXml({
-      singularizeChildren: true,
       indent: 4
     });
 
@@ -103,7 +100,6 @@ describe("Basic Operations", function () {
     };
 
     var easyXML = new EasyXml({
-      singularizeChildren: true,
       indent: 4
     });
 

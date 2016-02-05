@@ -9,7 +9,6 @@ describe("Complex Operations", function () {
     var before = require('./fixtures/complex.json');
 
     var easyXML = new EasyXml({
-      singularizeChildren: true,
       indent: 4
     });
 
@@ -45,7 +44,6 @@ describe("Complex Operations", function () {
 
     var easyXML = new EasyXml({
       manifest: true,
-      singularizeChildren: true,
       unwrappedArrays: true,
       rootElement: 'widget'
     });
