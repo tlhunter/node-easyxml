@@ -33,20 +33,6 @@ describe("Basic Operations", function () {
     }, /non_string_attribute/);
   });
 
-  it("should handle a more complex object", function() {
-    var before = require('./fixtures/complex.json');
-
-    var easyXML = new EasyXml({
-      singularizeChildren: true
-    });
-
-    var after = easyXML.render(before);
-
-    var expected = fs.readFileSync('./test/fixtures/complex.xml', 'utf8');
-
-    assert.strictEqual(after, expected);
-  });
-
   it("should parse a JSON object into XML", function() {
     var before = {
       names: [
