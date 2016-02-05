@@ -232,8 +232,13 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
                     }
                 }
             } else if (typeof child === 'object') {
-                // Object, go deeper
-                this.parseChildElement(el, child);
+                if (typeof child.toJSON === 'function') {
+                    // .toJSON() is a common JS convention for serializing an object
+                    el.text = child.toJSON();
+                } else {
+                    // Object, go deeper
+                    this.parseChildElement(el, child);
+                }
             } else if (typeof child === 'number' || typeof child === 'boolean') {
                 el.text = child.toString();
                 /* istanbul ignore else */
