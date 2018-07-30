@@ -73,6 +73,7 @@ This should output the following XML document:
 | indent                    | The number of spaces to indent child elements with                | 2         |
 | manifest                  | Whether or not to add that XML manifest line to the top           | false     |
 | rootArray                 | If the root element is an array, this wraps the XML document      | 'items'   |
+| rootAttributes            | An object of attributes to root element                           | {}        |
 | rootElement               | A string to wrap around the rendered XML document                 | 'response'|
 | singularize               | If an array is plural, its children elements will be singular     | true      |
 | unwrapArrays              | If true will keep array children at parents level                 | false     |

@@ -22,6 +22,7 @@ var EasyXml = function(config) {
     manifest: false,
     rootArray: 'items',
     rootElement: 'response',
+    rootAttributes: {},
     singularize: true,
     unwrapArrays: false
   }, config);
@@ -108,7 +109,9 @@ EasyXml.prototype.render = function(object, rootElementOverride) {
   }
 
   var xml = element(root);
-
+  
+  xml.attrib = this.config.rootAttributes;
+  
   this.parseChildElement(xml, object);
 
   return new ElementTree(xml).write({
